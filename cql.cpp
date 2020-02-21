@@ -115,6 +115,13 @@ void select_row(Row* root, int index) {
 }
 
 //Adds the appropriate node to the b-tree
+//This adds nodes to a basic binary tree
+//The problem with this is that if rows are added in a particular order
+//Say, for instance, sorted key order, the tree degenerates into a simple
+//linked list, which causes the loss of all tree based performance gains
+//To fix this, I need to implement self-balancing binary trees
+//This means I will need a way to monitor tree depth and execute
+//tree rotations where and when appropriate.
 void insert_row(Row* root, int index, int data) {
     if (root->index == index) {
         std::cout << "This index already exists" << std::endl;
