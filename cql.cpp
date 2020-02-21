@@ -70,6 +70,11 @@ int main() {
     while(true) {
         std::cout << ">>";
         std::cin >> statement;
+        std::istringstream iss(statement);
+        std::vector<std::string> results(
+            (std::istream_iterator<std::string>(iss)),
+            std::istream_iterator<std::string>()
+        );
     }
     */
    //For now though, I keep it simple
